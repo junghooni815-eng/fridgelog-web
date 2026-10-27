@@ -1,0 +1,93 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1d1d1b;
+  --muted: #6b6a66;
+  --line: #e6e3dc;
+  --accent: #2f6f5e;
+  --accent-soft: #e6f0ec;
+  --ok: #2f6f5e;
+  --ok-soft: #eaf3ef;
+  --bad: #a23b2a;
+  --bad-soft: #f8ebe8;
+  --radius: 12px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161614;
+    --surface: #1f1f1c;
+    --text: #ecebe6;
+    --muted: #a4a29b;
+    --line: #34332f;
+    --accent: #7cc3ad;
+    --accent-soft: #23322d;
+    --ok: #7cc3ad;
+    --ok-soft: #1f2e29;
+    --bad: #f0907d;
+    --bad-soft: #3a2421;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+.site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.brand { font-weight: 700; color: var(--text); }
+.site-footer { margin-top: 64px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; padding: 24px 0 48px; }
+h1 { font-size: 28px; line-height: 1.35; margin: 32px 0 8px; }
+h2 { font-size: 21px; margin: 40px 0 12px; display: flex; align-items: baseline; gap: 8px; }
+h2 .num { color: var(--accent); font-size: 15px; font-weight: 700; }
+h3 { font-size: 17px; margin: 20px 0 4px; }
+p { margin: 8px 0; }
+.lead { color: var(--muted); margin-top: 4px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.chip { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 2px 12px; font-size: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; margin: 12px 0; }
+.note { color: var(--muted); font-size: 15px; }
+ul.clean, ol.clean { margin: 8px 0; padding-left: 1.2em; }
+ul.clean li, ol.clean li { margin: 4px 0; }
+.cond { list-style: none; padding: 0; margin: 8px 0; }
+.cond li { border-radius: 10px; padding: 10px 14px; margin: 8px 0; }
+.cond.ok li { background: var(--ok-soft); }
+.cond.bad li { background: var(--bad-soft); }
+.cond .state { font-weight: 600; display: block; }
+.cond .action { display: block; color: var(--muted); }
+.cond-title { font-weight: 700; margin: 16px 0 0; }
+.cond-title.ok { color: var(--ok); }
+.cond-title.bad { color: var(--bad); }
+.steps { counter-reset: step; list-style: none; padding: 0; }
+.steps li { counter-increment: step; position: relative; padding-left: 40px; margin: 16px 0; }
+.steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px;
+  width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--bg);
+  font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+.method { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.badge { font-size: 13px; border-radius: 6px; padding: 1px 8px; white-space: nowrap; }
+.badge.권장 { background: var(--ok-soft); color: var(--ok); }
+.badge.가능 { background: var(--accent-soft); color: var(--muted); }
+.badge.비권장 { background: var(--bad-soft); color: var(--bad); }
+.list { list-style: none; padding: 0; }
+.list li { border-bottom: 1px solid var(--line); }
+.list a { display: block; padding: 14px 0; color: var(--text); }
+.list a:hover { text-decoration: none; }
+.list .t { font-weight: 600; }
+.list .s { color: var(--muted); font-size: 15px; display: block; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; padding: 0; list-style: none; }
+.grid a { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; color: var(--text); }
+.share { border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 999px; padding: 8px 16px; font: inherit; font-size: 15px; cursor: pointer; }
+.crumb { font-size: 14px; color: var(--muted); margin-top: 24px; }
