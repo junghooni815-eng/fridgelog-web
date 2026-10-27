@@ -1,6 +1,6 @@
 # fridgelog-web
 
-granroot.com의 FridgeLog 웹. 앱이 추천 카드에서 외부 브라우저로 여는 `/r/{slug}` 페이지와 재료 허브 `/i/{slug}`.
+granroot.com의 냉장고야(FridgeLog) 웹. 앱이 추천 카드에서 외부 브라우저로 여는 `/r/{slug}` 페이지와 재료 허브 `/i/{slug}`.
 
 ## 페이지
 
