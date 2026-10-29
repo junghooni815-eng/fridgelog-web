@@ -3,9 +3,9 @@
 type Product = { label: string; keywords: string[]; url: string };
 
 const PRODUCTS: Product[] = [
-  { label: "밀폐용기", keywords: ["밀폐용기", "밀폐 용기", "용기", "보관통", "반찬통", "김치통", "우유통"], url: "" },
-  { label: "지퍼백", keywords: ["지퍼백", "냉동백", "보관백", "냉동팩", "육수팩", "봉투", "비닐"], url: "" },
-  { label: "키친타월", keywords: ["키친타월"], url: "" },
+  { label: "밀폐용기", keywords: ["밀폐용기", "밀폐 용기", "용기", "보관통", "반찬통", "김치통", "우유통"], url: "https://link.coupang.com/a/ieyHyaAuMm" },
+  { label: "지퍼백", keywords: ["지퍼백", "냉동백", "보관백", "냉동팩", "육수팩", "봉투", "비닐"], url: "https://link.coupang.com/a/ieyJrCHL6i" },
+  { label: "키친타월", keywords: ["키친타월"], url: "https://link.coupang.com/a/ieyLx4mCPI" },
   { label: "프라이팬", keywords: ["프라이팬", "팬"], url: "" },
 ];
 
