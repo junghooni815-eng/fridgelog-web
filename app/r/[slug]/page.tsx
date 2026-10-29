@@ -4,6 +4,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { ConditionList } from "@/components/Condition";
 import ShareButton from "@/components/ShareButton";
 import StorageSection from "@/components/StorageSection";
+import AffiliateBlock from "@/components/AffiliateBlock";
 import { getDoc, getIngredient, getStorageDoc, listPublishedDocs } from "@/lib/data";
 import { withRo } from "@/lib/josa";
 import type { Doc, Ingredient, RecipeBody, StorageBody, ThawBody } from "@/lib/types";
@@ -79,6 +80,7 @@ function Recipe({ doc, ing, storage }: { doc: Doc<RecipeBody>; ing: Ingredient |
       ) : null}
 
       {storage && <StorageSection doc={storage} num="⑤" />}
+      <AffiliateBlock line={b.affiliate_line} num={storage ? "⑥" : "⑤"} />
       {ing && <p className="crumb"><Link href={`/i/${ing.slug}`}>{withRo(ing.name)} 만드는 다른 요리</Link></p>}
     </>
   );
@@ -118,6 +120,7 @@ function Thaw({ doc, ing, storage }: { doc: Doc<ThawBody>; ing: Ingredient | nul
       )}
 
       {storage && <StorageSection doc={storage} num="④" />}
+      <AffiliateBlock line={b.affiliate_line} num={storage ? "⑤" : "④"} />
       {ing && <p className="crumb"><Link href={`/i/${ing.slug}`}>{withRo(ing.name)} 만드는 요리</Link></p>}
     </>
   );
